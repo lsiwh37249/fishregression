@@ -22,7 +22,7 @@ license = {text = "MIT"}
 distribution = true
 
 [project.scripts]
-#pp = "fishregression.main:predict"
+pp = "fishregression.cli:predict"
 gw = "fishregression.main:get_weight"
 
 [tool.pdm.dev-dependencies]

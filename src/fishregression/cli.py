@@ -5,7 +5,18 @@ app = FastAPI()
 
 
 def lr_api(l):
-    return 3     
+    headers = {
+        'accept': 'application/json',
+    }
+
+    params = {
+        'length': l,
+    }
+
+    response = requests.get('http://localhost:8001/get_weight', params=params, headers=headers)    
+    j = response.json()
+    r = j.get("weight")
+    return r
 
 def knn_api(l,w,n):
     headers = {
@@ -31,7 +42,7 @@ def read_root():
 def predict():
     length =3
 
-    neighbor = 3
+    neighbor = 5
 
     # weight 예측 선형회귀 API 호출
     weight = lr_api(length)
