@@ -17,7 +17,7 @@ def lr_api(l):
 
 #    response = requests.get('http://ec2-43-202-46-68.ap-northeast-2.compute.amazonaws.com:8080/get_weight', params=params, headers=headers)    
     
-    response = requests.get('http://localhost:8002/get_weight', params=params, headers=headers)    
+    response = requests.get('http://localhost:8003/get_weight', params=params, headers=headers)    
     
     j = response.json()
     r = j.get("weight")
@@ -35,7 +35,7 @@ def knn_api(l,w,n):
     }
 
 #    response = requests.get('http://ec2-43-202-46-68.ap-northeast-2.compute.amazonaws.com:8080/fish', params=params, headers=headers)
-    response = requests.get('http://localhost:8003/fish', params=params, headers=headers)
+    response = requests.get('http://localhost:8002/fish', params=params, headers=headers)
     j = response.json()
     r = j.get("prediction")
     return r
